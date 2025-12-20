@@ -28,12 +28,33 @@ function timeStorage(){
 	localStorage.setItem(timeNameAttr, times.value)
 }
 
+/*At a specfic time and date, change background color of body*/
+
+function colorTimeChange(){			
+	const timeNameAttr = times.getAttribute('name')
+	
+	const setTime = localStorage.getItem(timeNameAttr)
+	
+	setInterval(() => {
+        const now = new Date();
+
+        const currentTime =
+            now.getHours().toString().padStart(2, '0') + ':' +
+            now.getMinutes().toString().padStart(2, '0');
+
+        if (currentTime === setTime) {
+            document.body.style.backgroundColor = 'red';
+        }
+    }, 1000);
+	
+}
 
 // adding interaction with buttons
 submitBtn.addEventListener('click', (e) => {
 	e.preventDefault()
 	dateStorage()
 	timeStorage()
+	colorTimeChange()
 })
 
 resetBtn.addEventListener('click', () =>{
