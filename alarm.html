@@ -15,10 +15,27 @@
 		<h1>Simple Alarm Clock</h1>
 	</div>
 	
-	<div class=timeContainer>
-		<div class="currentTime" id="currentTime"></div>
-	</div>
+	<form>
+		<div class=timeContainer>
+			<div class="currentTime" id="currentTime"></div>
+
+			<label for="calender"></label>
+			<input name="calender" id="calender" type="date" required>
+		
+			<label for="timing"></label>
+			<br>
+			<br>
+			<input name="time" id="timing" type="time" required>
+			<br>
+			<button type="submit" id="submitbtn">Set Alarm</button>
+			<br>
+			<div class="alarmContainer" id="alarmContainer">
+				<button type="reset" id="deleteBtn">Delete</button>
+			</div>
+		</div>
+	</form>
+
+	<script src='alarm.js'></script>
 </body>
 
-<script src='alarm.js'></alarm>
 </html>
