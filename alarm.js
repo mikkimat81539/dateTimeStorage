@@ -93,21 +93,19 @@ function alarmContainerAppend() {
 	}
 
 	else {
-		const existingP = appendContainer.querySelector('p');
+		const newP = document.createElement("p") // creating p tag
+		newP.style.color = "red"
+		newP.style.fontFamily = "'Saira', Arial, sans-serif"
+		newP.textContent = 'The maximum alarms you can set is 3'
 
-		if (!existingP) {
-			const newP = document.createElement("p") // creating p tag
-			newP.style.color = "red"
-			newP.style.fontFamily = "'Saira', Arial, sans-serif"
-			newP.textContent = 'The maximum alarms you can set is 3'
-
-			if (appendContainer.querySelectorAll('p').length < 1) {
-				appendContainer.appendChild(newP)
-			}
+		if (appendContainer.querySelectorAll('p').length < 1) {
+			appendContainer.appendChild(newP)
 		}
 
 		else {
-			newP.remove()
+			if (newP) {
+				newP.remove()
+			}
 		}
 	}
 
