@@ -88,9 +88,12 @@ function alarmContainerAppend() {
 	newDiv.style.alignItems = "center"
 	newDiv.style.padding = "5px"
 
+	// create alarmData inside newDiv
+
 	// set the max number of containers to 3
 	if (appendContainer.querySelectorAll('div').length < 3) {
 		appendContainer.appendChild(newDiv)
+		newDiv.textContent = localStorage.getItem(calenderNameAttr)
 	}
 
 	// creating p tag
