@@ -2,6 +2,9 @@ const currentTime = document.getElementById('currentTime')
 const calender = document.getElementById('calender')
 const timing = document.getElementById('timing')
 const submitbtn = document.getElementById('submitbtn')
+const deleteBtn = document.getElementById('deleteBtn')
+const alarmContainer = document.getElementById('alarmContainer')
+const timeContainer = document.getElementById('timeContainer') 
 
 // Display Current Time
 function formatTime(time) {
@@ -69,7 +72,13 @@ function timeStorage() {
 }
 
 function alarmContainerAppend() {
+	if (alarmContainer.style.visibility === '') {
+		alarmContainer.style.visibility = 'visible'
+	}
 
+	// else {
+	// 	alarmContainer.style.visibility = ''
+	// }
 }
 
 // submit button function
@@ -77,6 +86,12 @@ submitbtn.addEventListener('click', (ev) => {
 	ev.preventDefault()
 	dateStorage()
 	timeStorage()
+	alarmContainerAppend()
+})
+
+// delete button function
+deleteBtn.addEventListener('click', () => {
+	alarmContainer.remove()
 })
 
 // when I click button it needs to unhide the alarm container

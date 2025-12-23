@@ -67,8 +67,17 @@ form {
 	background-color: rgb(222, 221, 221);
 }
 
+.appendContainer {
+	border: solid 5px red;
+	width: 100%;
+	height: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .alarmContainer {
-	margin: 10px 0px;
+	margin: 5px 0px;
 	padding: 5px;
 	border: solid 1px rgb(223, 204, 172);
 	border-radius: 10px;
@@ -78,6 +87,7 @@ form {
 	display: flex;
 	justify-content: end;
 	align-items: center;
+	visibility: hidden;
 }
 
 .alarmContainer > button {
