@@ -83,8 +83,12 @@ function alarmContainerAppend() {
 	newDiv.style.borderRadius = "10px"
 	newDiv.style.backgroundColor = "rgb(224, 211, 192)"
 	newDiv.style.margin = "10px 0px"
+	newDiv.style.display = "flex"
+	newDiv.style.justifyContent = "end"
+	newDiv.style.alignItems = "center"
+	newDiv.style.padding = "5px"
 
-
+	// set the max number of containers to 3
 	if (appendContainer.querySelectorAll('div').length < 3) {
 		appendContainer.appendChild(newDiv)
 	}
@@ -100,6 +104,32 @@ function alarmContainerAppend() {
 			appendContainer.appendChild(newP)
 		}
 	}
+
+	// creating button element inside div container
+	const newBtn = document.createElement("button")
+	newBtn.id = ""
+	newBtn.className = "deleteBtn"
+	newBtn.textContent = "Delete"
+	newBtn.style.width = "20%"
+	newBtn.style.height = "70%"
+	newBtn.style.border = "solid 1px rgb(176, 176, 176)"
+	newBtn.style.borderRadius = "5px"
+	newBtn.style.cursor = "pointer"
+	newBtn.style.backgroundColor = "background-color: rgb(236, 236, 236)"
+
+	// hover effect fot buttons
+	newBtn.addEventListener("mouseover", () => {
+  		newBtn.style.backgroundColor = "rgb(222, 221, 221)" // When mouse hovers
+	})
+
+	newBtn.addEventListener("mouseout", () => {
+  		newBtn.style.backgroundColor = "rgb(236, 236, 236)" // When mouse leaves
+	})
+
+	// add button to div container with a max of 3
+	if (newDiv.querySelectorAll("button").length < 3) {
+		newDiv.appendChild(newBtn)
+	}
 }
 
 // submit button function
@@ -109,8 +139,3 @@ submitbtn.addEventListener('click', (ev) => {
 	timeStorage()
 	alarmContainerAppend()
 })
-
-// delete button function
-// deleteBtn.addEventListener('click', () => {
-// 	alarmContainer.remove()
-// })
