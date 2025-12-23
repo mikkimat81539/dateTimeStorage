@@ -2,7 +2,6 @@ const currentTime = document.getElementById('currentTime')
 const calender = document.getElementById('calender')
 const timing = document.getElementById('timing')
 const submitbtn = document.getElementById('submitbtn')
-const deleteBtn = document.getElementById('deleteBtn')
 const appendContainer = document.getElementById('appendContainer')
 const timeContainer = document.getElementById('timeContainer') 
 
@@ -88,23 +87,27 @@ function alarmContainerAppend() {
 	newDiv.style.alignItems = "center"
 	newDiv.style.padding = "5px"
 
-	// create alarmData inside newDiv
-
 	// set the max number of containers to 3
 	if (appendContainer.querySelectorAll('div').length < 3) {
 		appendContainer.appendChild(newDiv)
-		newDiv.textContent = localStorage.getItem(calenderNameAttr)
 	}
 
-	// creating p tag
 	else {
-		const newP = document.createElement("p")
-		newP.style.color = "red"
-		newP.style.fontFamily = "'Saira', Arial, sans-serif"
-		newP.textContent = 'The maximum alarms you can set is 3'
+		const existingP = appendContainer.querySelector('p');
 
-		if (appendContainer.querySelectorAll('p').length < 1) {
-			appendContainer.appendChild(newP)
+		if (!existingP) {
+			const newP = document.createElement("p") // creating p tag
+			newP.style.color = "red"
+			newP.style.fontFamily = "'Saira', Arial, sans-serif"
+			newP.textContent = 'The maximum alarms you can set is 3'
+
+			if (appendContainer.querySelectorAll('p').length < 1) {
+				appendContainer.appendChild(newP)
+			}
+		}
+
+		else {
+			newP.remove()
 		}
 	}
 
@@ -112,6 +115,7 @@ function alarmContainerAppend() {
 	const newBtn = document.createElement("button")
 	newBtn.id = ""
 	newBtn.className = "deleteBtn"
+	newBtn.style.marginLeft = "30px"
 	newBtn.textContent = "Delete"
 	newBtn.style.width = "20%"
 	newBtn.style.height = "70%"
@@ -129,6 +133,11 @@ function alarmContainerAppend() {
   		newBtn.style.backgroundColor = "rgb(236, 236, 236)" // When mouse leaves
 	})
 
+	newBtn.addEventListener("click", () => {
+		newDiv.remove()
+		newBtn.remove()
+	})
+
 	// add button to div container with a max of 3
 	if (newDiv.querySelectorAll("button").length < 3) {
 		newDiv.appendChild(newBtn)
@@ -142,3 +151,7 @@ submitbtn.addEventListener('click', (ev) => {
 	timeStorage()
 	alarmContainerAppend()
 })
+
+
+
+//`${String(newDiv.textContent = localStorage.getItem(timeNameAttr))}, ${String(newDiv.textContent = localStorage.getItem(calenderNameAttr))}`
