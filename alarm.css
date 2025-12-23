@@ -30,7 +30,7 @@ form {
 
 .timeContainer {
 	padding: 15px;
-	width: 100%;
+	width: 350px;
 	height: 100%;
 	border: solid 5px white;
 	border-radius: 10px;
@@ -38,7 +38,7 @@ form {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	flex-wrap: wrap;
+
 }
 
 .timeContainer > .currentTime {
@@ -67,15 +67,16 @@ form {
 	background-color: rgb(222, 221, 221);
 }
 
+
 .appendContainer {
-	border: solid 5px red;
+	padding: 5px;
 	width: 100%;
-	height: auto;
+	height: 45%;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 }
-
+/*
 .alarmContainer {
 	margin: 5px 0px;
 	padding: 5px;
@@ -102,3 +103,4 @@ form {
 .alarmContainer > button:hover {
 	background-color: rgb(222, 221, 221);
 }
+*/

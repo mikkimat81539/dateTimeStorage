@@ -3,7 +3,7 @@ const calender = document.getElementById('calender')
 const timing = document.getElementById('timing')
 const submitbtn = document.getElementById('submitbtn')
 const deleteBtn = document.getElementById('deleteBtn')
-const alarmContainer = document.getElementById('alarmContainer')
+const appendContainer = document.getElementById('appendContainer')
 const timeContainer = document.getElementById('timeContainer') 
 
 // Display Current Time
@@ -72,13 +72,34 @@ function timeStorage() {
 }
 
 function alarmContainerAppend() {
-	if (alarmContainer.style.visibility === '') {
-		alarmContainer.style.visibility = 'visible'
+	// creating div container for alarm container
+	const newDiv = document.createElement("div");
+
+	newDiv.id = ""
+	newDiv.className = "alarmContainer"
+	newDiv.style.width = "90%"
+	newDiv.style.height = "45px"
+	newDiv.style.border = "solid 1px rgb(223, 204, 172)"
+	newDiv.style.borderRadius = "10px"
+	newDiv.style.backgroundColor = "rgb(224, 211, 192)"
+	newDiv.style.margin = "10px 0px"
+
+
+	if (appendContainer.querySelectorAll('div').length < 3) {
+		appendContainer.appendChild(newDiv)
 	}
 
-	// else {
-	// 	alarmContainer.style.visibility = ''
-	// }
+	// creating p tag
+	else {
+		const newP = document.createElement("p")
+		newP.style.color = "red"
+		newP.style.fontFamily = "'Saira', Arial, sans-serif"
+		newP.textContent = 'The maximum alarms you can set is 3'
+
+		if (appendContainer.querySelectorAll('p').length < 1) {
+			appendContainer.appendChild(newP)
+		}
+	}
 }
 
 // submit button function
@@ -90,10 +111,6 @@ submitbtn.addEventListener('click', (ev) => {
 })
 
 // delete button function
-deleteBtn.addEventListener('click', () => {
-	alarmContainer.remove()
-})
-
-// when I click button it needs to unhide the alarm container
-// when I click submit gray container needs to append
-// grab value of data in local storage and display in container
+// deleteBtn.addEventListener('click', () => {
+// 	alarmContainer.remove()
+// })
