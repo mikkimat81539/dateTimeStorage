@@ -93,20 +93,13 @@ function alarmContainerAppend() {
 	}
 
 	else {
+		// create p element error
 		const newP = document.createElement("p") // creating p tag
+		
+		newP.id = "errorText"
 		newP.style.color = "red"
 		newP.style.fontFamily = "'Saira', Arial, sans-serif"
-		newP.textContent = 'The maximum alarms you can set is 3'
-
-		if (appendContainer.querySelectorAll('p').length < 1) {
-			appendContainer.appendChild(newP)
-		}
-
-		else {
-			if (newP) {
-				newP.remove()
-			}
-		}
+		newP.textContent = "The maximum alarms you can set is 3"
 	}
 
 	// creating button element inside div container
@@ -122,7 +115,7 @@ function alarmContainerAppend() {
 	newBtn.style.cursor = "pointer"
 	newBtn.style.backgroundColor = "background-color: rgb(236, 236, 236)"
 
-	// hover effect fot buttons
+	// hover effect fors buttons
 	newBtn.addEventListener("mouseover", () => {
   		newBtn.style.backgroundColor = "rgb(222, 221, 221)" // When mouse hovers
 	})
@@ -149,7 +142,3 @@ submitbtn.addEventListener('click', (ev) => {
 	timeStorage()
 	alarmContainerAppend()
 })
-
-
-
-//`${String(newDiv.textContent = localStorage.getItem(timeNameAttr))}, ${String(newDiv.textContent = localStorage.getItem(calenderNameAttr))}`
