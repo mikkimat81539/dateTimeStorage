@@ -19,6 +19,7 @@ function setTodayTime() {
     
     setCurrDate.innerText = dateFormat
     setCurrTime.innerText = timeFormat
+
 }
 
-setTodayTime()
+setInterval(setTodayTime)
