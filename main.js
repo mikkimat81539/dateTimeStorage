@@ -20,6 +20,10 @@ function setTodayTime() {
     setCurrDate.innerText = dateFormat
     setCurrTime.innerText = timeFormat
 
+    const schedule = `${dateFormat}, ${timeFormat}`
+
+    localStorage.setItem("Scheduled Time", schedule)
+
 }
 
 setInterval(setTodayTime)
