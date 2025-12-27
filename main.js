@@ -1,29 +1,33 @@
-const setCurrDate = document.getElementById('setCurrDate')
-const setCurrTime = document.getElementById('setCurrTime')
+const dateCont = document.getElementById('dateCont')
+const timeCont = document.getElementById('timeCont')
+const setDate = document.getElementById('setDate')
+const setTime = document.getElementById('setTime')
 
-function setTodayTime() {
+function setPresentTime() {
     const currDay = new Date()
 
     const listMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
-    const date = currDay.getDate()
-    const month = currDay.getMonth()
-    const monthName = listMonths[month]
     const year = currDay.getFullYear()
-
+    const month = currDay.getMonth()
+    const getListMonths = listMonths[month]
+    const day = currDay.getDate()
+    
     const hours = currDay.getHours()
     const mins = currDay.getMinutes()
 
-    const dateFormat = `${String(monthName)} ${String(date).padStart(2, "0")}, ${String(year)}`
-    const timeFormat = `${String(hours).padStart(2, "0")}:${String(mins).padStart(2, "0")}`
+    const dateFormat = `${String(getListMonths)} ${String(day).padStart(2, "0")}, ${String(year)}`
+    const timeFormat = `${String(hours)}:${String(mins)}`
     
-    setCurrDate.innerText = dateFormat
-    setCurrTime.innerText = timeFormat
+    setDate.innerText = dateFormat
+    setDate.style.userSelect = 'none'
 
-    const schedule = `${dateFormat}, ${timeFormat}`
-
-    localStorage.setItem("Scheduled Time", schedule)
-
+    setTime.innerText = timeFormat
+    setTime.style.userSelect = "none"
 }
 
-setInterval(setTodayTime)
+function toggleTime() {
+    
+}
+
+setInterval(setPresentTime)

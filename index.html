@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Date & Time Picker</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
 </head>
 <body>
-    <div class="main" id="mainContainer" style="user-select: none;">
-        <h1>Date & Time Picker</h1>
+    <div class="main">
+        <h1>Date and Time Picker</h1>
 
-        <div id="timeContainer" style="display: flex;">
-
-            <div id="dateCont" style="margin-right: 50px; font-size: 20px;">
-                <p>Date:&nbsp;&nbsp;<span id="setCurrDate"></span></p>
+        <div id="dateTimeContainer" style="display: flex; font-size: 20px;">
+            <div id="dateCont" style="margin-right: 50px;">
+                <p>Date:&nbsp;&nbsp;<span id="setDate"></span></p>
             </div>
+            <div id="timeCont">
+                <p>Time:&nbsp;&nbsp;<span id="setTime"></span></p>
+            </div>
+        </div>
 
-            <div id="timeCont" style="font-size: 20px;">
-                <p>Time:&nbsp;&nbsp;<span id="setCurrTime"></span></p>
+        <div id="dateSelection" style="display: flex; align-items: center;">
+            <p style="font-size: 18px; margin-right: 40px;">Pick a Date:</p>
+
+            <div id="dateArrowContainer">
+                <p><button id="prevMonth">&lt;</button>&nbsp;&nbsp;
+                    <span id="dateArrows"></span>
+                &nbsp;&nbsp;<button id="afterMonth">&gt;</button></p>
             </div>
         </div>
     </div>
