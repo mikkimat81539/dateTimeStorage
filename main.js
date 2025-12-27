@@ -1,78 +1,50 @@
-const dateCont = document.getElementById('dateCont')
-const timeCont = document.getElementById('timeCont')
-const setDate = document.getElementById('setDate')
-const setTime = document.getElementById('setTime')
+const circleBtn = document.getElementById('circleBtn')
+let isActive = false; // tracks toggle state
 
-const prevMonth = document.getElementById('prevMonth')
-const afterMonth = document.getElementById('afterMonth')
-
-const dateArrows = document.getElementById('dateArrows')
-
-const resetBtn = document.getElementById('resetBtn')
-
-function setPresentTime() {
+function setDate() {
     const currDay = new Date()
 
     const listMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"]
 
-    const year = currDay.getFullYear()
     const month = currDay.getMonth()
-    const getListMonths = listMonths[month]
-    const day = currDay.getDate()
-    
-    const hours = currDay.getHours()
-    const mins = currDay.getMinutes()
 
-    const dateFormat = `${String(getListMonths)} ${String(day).padStart(2, "0")}, ${String(year)}`
-    const timeFormat = `${String(hours).padStart(2, "0")}:${String(mins).padStart(2, "0")}`
-    
-    setDate.innerText = dateFormat
-    setDate.style.userSelect = 'none'
+    const iterateList = listMonths[month]
 
-    setTime.innerText = timeFormat
-    setTime.style.userSelect = "none"
-}
+    const date = currDay.getDate()
 
-function toggleTime() {
-    const today = new Date()
+    const dayOnlyFormat = `${String(date).padStart(2, "0")}`
+    circleBtn.innerText = dayOnlyFormat
 
-    const ListofMonths = ["January", "February", "March", "April", 
-        "May", "June", "July", "August", 
-        "September", "October", "November", "December"]
+    const dateFormat = `${String(iterateList).padStart(2, "0")}, ${String(date).padStart(2, "0")}`
 
-    let month = today.getMonth()
-    let setListMonths = ListofMonths[month]
-    let year = today.getFullYear()
+    if (localStorage.getItem("Date Pick")) {
+        isActive = true
+        circleBtn.style.backgroundColor = "#00bfffff"
+        circleBtn.style.color = "#FFF"
+    }
 
-    dateArrows.innerText = `${setListMonths} ${(year)}`
+    else {
+        circleBtn.style.backgroundColor = '#FFF'
+        circleBtn.style.color = "#000"
+    }
 
-    prevMonth.addEventListener('click', () => {
-        month-- // go to previous month
-        if (month < 0) {
-            
-            month = 11; // if at december than go back tp january
-            year = year - 1
+    circleBtn.addEventListener('click', () => {
+        circleBtn.style.userSelect = "none"
+
+        if (!isActive){
+            circleBtn.style.backgroundColor = "#00bfffff"
+            circleBtn.style.color = "#FFF"
+            localStorage.setItem("Date Pick", dateFormat)
         }
 
-        setListMonths = ListofMonths[month];
-        dateArrows.innerText = `${setListMonths} ${(year)}`
-    });
-
-    afterMonth.addEventListener('click', () => {
-        month++
-        if (month > 11) { // if past December
-            month = 0
-            year = year + 1
+        else {
+            circleBtn.style.backgroundColor = '#FFF'
+            circleBtn.style.color = "#000"
+            localStorage.removeItem("Date Pick")
         }
 
-        setListMonths = ListofMonths[month];
-        dateArrows.innerText = `${setListMonths} ${(year)}`
+        isActive = !isActive
     })
 }
 
-resetBtn.addEventListener('click', () => {
-    toggleTime()
-})
-
-setInterval(setPresentTime)
-toggleTime()
+setDate()

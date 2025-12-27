@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Picker</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Date and Time Picker</h1>
+
+        <div id="dateTimeContainer" style="display: flex; font-size: 20px;">
+            <div id="dateCont" style="margin-right: 50px;">
+                <p>Date:&nbsp;&nbsp;<span id="setDate"></span></p>
+            </div>
+            <div id="timeCont">
+                <p>Time:&nbsp;&nbsp;<span id="setTime"></span></p>
+            </div>
+        </div>
+
+        <div id="dateSelection" style="display: flex; align-items: center; user-select: none;">
+            <p style="font-size: 18px; margin-right: 40px;">Pick a Date:</p>
+
+            <div id="dateArrowContainer" style="display: flex; gap: 20px;">
+                <p><button id="prevMonth">&lt;</button>&nbsp;&nbsp;
+                    <span id="dateArrows"></span>
+                &nbsp;&nbsp;<button id="afterMonth">&gt;</button></p>
+
+                <button type="reset" id="resetBtn">RESET</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
