@@ -3,6 +3,11 @@ const timeCont = document.getElementById('timeCont')
 const setDate = document.getElementById('setDate')
 const setTime = document.getElementById('setTime')
 
+const prevMonth = document.getElementById('prevMonth')
+const afterMonth = document.getElementById('afterMonth')
+
+const dateArrows = document.getElementById('dateArrows')
+
 function setPresentTime() {
     const currDay = new Date()
 
@@ -17,7 +22,7 @@ function setPresentTime() {
     const mins = currDay.getMinutes()
 
     const dateFormat = `${String(getListMonths)} ${String(day).padStart(2, "0")}, ${String(year)}`
-    const timeFormat = `${String(hours)}:${String(mins)}`
+    const timeFormat = `${String(hours).padStart(2, "0")}:${String(mins).padStart(2, "0")}`
     
     setDate.innerText = dateFormat
     setDate.style.userSelect = 'none'
@@ -27,7 +32,32 @@ function setPresentTime() {
 }
 
 function toggleTime() {
-    
+    const today = new Date()
+
+    const ListofMonths = ["January", "February", "March", "April", 
+        "May", "June", "July", "August", 
+        "September", "October", "November", "December"]
+
+    let month = today.getMonth()
+    let setListMonths = ListofMonths[month]
+    let year = today.getFullYear()
+
+    dateArrows.innerText = `${setListMonths} ${(year)}`
+
+    prevMonth.addEventListener('click', () => {
+        month-- // go to previous month
+        if (month < 0) {
+            
+            month = 11; // if at december than go back tp january
+            year = year - 1
+        }
+
+        setListMonths = ListofMonths[month];
+        dateArrows.innerText = `${setListMonths} ${(year)}`
+    });
 }
 
 setInterval(setPresentTime)
+toggleTime()
+
+/*When user clicks previous btn than it needs to iterate backwards */
