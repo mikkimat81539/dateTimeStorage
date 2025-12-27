@@ -8,6 +8,8 @@ const afterMonth = document.getElementById('afterMonth')
 
 const dateArrows = document.getElementById('dateArrows')
 
+const resetBtn = document.getElementById('resetBtn')
+
 function setPresentTime() {
     const currDay = new Date()
 
@@ -67,6 +69,10 @@ function toggleTime() {
         dateArrows.innerText = `${setListMonths} ${(year)}`
     })
 }
+
+resetBtn.addEventListener('click', () => {
+    toggleTime()
+})
 
 setInterval(setPresentTime)
 toggleTime()
