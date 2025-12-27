@@ -55,9 +55,18 @@ function toggleTime() {
         setListMonths = ListofMonths[month];
         dateArrows.innerText = `${setListMonths} ${(year)}`
     });
+
+    afterMonth.addEventListener('click', () => {
+        month++
+        if (month > 11) { // if past December
+            month = 0
+            year = year + 1
+        }
+
+        setListMonths = ListofMonths[month];
+        dateArrows.innerText = `${setListMonths} ${(year)}`
+    })
 }
 
 setInterval(setPresentTime)
 toggleTime()
-
-/*When user clicks previous btn than it needs to iterate backwards */
