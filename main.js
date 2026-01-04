@@ -1,22 +1,32 @@
-const main = document.getElementById('main')
-const circleBtn = document.querySelectorAll('.circle')
+/*Add style to container
+Have section month, date, year */
 
-main.style.display = 'flex'
-main.style.gap = "20px"
+const dateContainer = document.getElementById('dateContainer')
+const dateInput = document.getElementById('dateInput')
+const dates = document.getElementById('dates')
+const monthInput = document.getElementById('monthInput')
+const months = document.getElementById('months')
+const yearInput = document.getElementById('yearInput')
+const years = document.getElementById('years')
 
-for (let i=0; i < circleBtn.length; i++) {
-    circleBtn[i].style.border = "solid 1px black"
-    circleBtn[i].style.borderRadius = "20px"
-    circleBtn[i].style.width = "30px"
-    circleBtn[i].style.height = "30px"
-    circleBtn[i].style.display = "flex"
-    circleBtn[i].style.justifyContent = "center"
-    circleBtn[i].style.alignItems = "center"
-    circleBtn[i].style.cursor = "pointer"
-    
-    circleBtn[i].innerText = i + 1
 
-    circleBtn[i].addEventListener('click', () => {
-        alert(i + 1)
-    })
+function containerSetup() {
+    dateInput.style.margin = "5px"
+    dates.style.marginRight = "5px"
+    dates.style.userSelect = "none"
+    monthInput.style.margin = "5px"
+    months.style.marginRight = "5px"
+    months.style.userSelect = "none"
+    yearInput.style.margin = "5px"
 }
+
+function setupTime() {
+    dateContainer.style.width = "160px"
+    dateContainer.style.height = "30px"
+    dateContainer.style.borderRadius = "10px"
+    dateContainer.style.border = "solid 2px black"
+    dateContainer.style.display = "flex"
+    containerSetup()
+}
+
+setupTime()

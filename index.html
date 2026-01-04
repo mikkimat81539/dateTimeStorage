@@ -1,23 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Number Buttons</title>
+        <title>Calender Select</title>
+        <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
-        <h1>Number Buttons</h1>
-
-        <div id="main">
-            <div class="circle" id="circle1"></div>
-            <div class="circle" id="circle2"></div>
-            <div class="circle" id="circle3"></div>
-            <div class="circle" id="circle4"></div>
-            <div class="circle" id="circle5"></div>
-            <div class="circle" id="circle6"></div>
-            <div class="circle" id="circle7"></div>
-            <div class="circle" id="circle8"></div>
-            <div class="circle" id="circle9"></div>
-            <div class="circle" id="circle10"></div>
+        <h1 style="user-select: none; cursor: default;">Select Dates</h1>
+        
+        <div id="dateContainer">
+            <div class="userInput" id="dateInput">
+                <input type="text" minlength="2" maxlength="2" name="dates" id="dates" size="3">
+                <label for="dates">/</label>
+            </div>
+            <div class="userInput" id="monthInput">
+                <input type="text" minlength="2" maxlength="2" name="months" id="months" size="3">
+                <label for="months">/</label>
+            </div>
+            <div class="userInput" id="yearInput">
+                <input type="text" minlength="2" maxlength="2" name="years" id="years" size="3">
+                <label for="years"></label>
+            </div>
         </div>
 
         <script src="main.js"></script>
