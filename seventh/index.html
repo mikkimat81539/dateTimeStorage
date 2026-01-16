@@ -41,6 +41,7 @@ body {
 }
 
 .dateContainer:hover > .dropDown {
+	padding: 5px;
 	border: solid 2px black;
         display: block;
         width: 300px;
@@ -48,9 +49,19 @@ body {
 	top: 100px;
 }
 
-.calandar {
+.calandarMY {
+	padding: 3px;
+	width: 100%;
+	height: 20%;
 	border: solid 1px red;
 	text-align: center;
+}
+
+.calandarDay{
+	margin-top: 10px;
+	border: solid 1px red;
+	width: 100%;
+	height: 100px;
 }
 
 </style>
@@ -61,17 +72,19 @@ body {
 	
 	<div class="dateContainer" id="dateContainer">
 		<div class="dropDown">
-			<div class="calandar">
+			<div class="calandarMY">
 				<thead>
     					<tr>
     						<th scope="col">
 							<button style="cursor: pointer;">&lt;</button>&nbsp;
-							<span id="currMonth"></span> 
+							<span id="currMoDa"></span> 
 							&nbsp;<button style="cursor: pointer;">&gt;</button>
 						</th>
     					</tr>
   				</thead>
 			<div>
+			
+			<div class="calandarDay"></div>
 		</div>
 	</div>
 </body>
