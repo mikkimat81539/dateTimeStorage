@@ -1,26 +1,56 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Calender Select</title>
-    </head>
-    <body>
-        <h1 style="user-select: none; cursor: default;">Select Dates</h1>
-        
-        <div id="dateContainer">
-            <div class="userInput" id="dateInput">
-                <input type="text" minlength="2" maxlength="2" name="dates" id="dates" size="3">
-                <label for="dates">/</label>
-            </div>
-            <div class="userInput" id="monthInput">
-                <input type="text" minlength="2" maxlength="2" name="months" id="months" size="3">
-                <label for="months">/</label>
-            </div>
-            <div class="userInput" id="yearInput">
-                <input type="text" minlength="2" maxlength="2" name="years" id="years" size="3">
-                <label for="years"></label>
-            </div>
-        </div>
 
-        <script src="main.js"></script>
-    </body>
+<head>
+	<title>Date Range</title>
+	
+<style>
+*{
+        margin: 0px;
+        padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: #00a6d9;
+}
+
+.dateContainer {
+        border: solid 3px black;
+        border-radius: 5px;
+        width: 20%;
+        height: 10%;
+        display: block
+        position: relative;
+	background-color: white;
+}
+
+.dateContainer > .dropDown {
+        border: solid 2px white;
+        width: 280px;
+        height: 50px;
+        position: absolute;
+	top: 45px;
+	background-color: white;
+}
+
+.dropDown:hover {
+	border: solid 2px black;
+        display: block;
+        width: 300px;
+        height: 150px;
+	top: 90px;
+}
+</style>
+</head>
+
+<body>
+	<h1>Select A  Date</h1>
+	
+	<div class="dateContainer" id="dateContainer">
+		<div class="dropDown"></div>
+	</div>
+</body>
 </html>
