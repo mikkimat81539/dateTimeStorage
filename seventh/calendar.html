@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>Calendar</title>
+	
+<style>
+	body {
+		font-family: "Arial", sans-serif;
+		display: grid;
+		place-items: center;
+		height: 100vh;
+		margin: 0;
+		background-color: #333333;
+	}
+	
+	.calendar {
+		background-color: #111111;
+		border-radius: 10px;
+		box-shadow: 0 0 30px #222222;
+		overflow: hidden;
+		width: 300px;
+		color: white;
+		padding: 20px;
+	}
+
+	.header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 10px;
+	}
+
+	.clickBtn {
+		cursor: pointer;
+	}
+</style>
+
+</head>
+
+<body>
+	<div class="calendar">
+		<div class="header">
+			<div id="prev">
+				<button class="clickBtn" id="prevBtn">&#10094;</button>
+			</div>
+
+			<div id="month-year"></div>
+			<div id="next">
+				<button class="clickBtn" id="nextBtn">&#10095;</button>
+			</div>
+		</div>
+		
+		<div class="weekdays">
+			<div>Sun</div>
+			<div>Mon</div>
+			<div>Tue</div>
+			<div>Wed</div>
+			<div>Thu</div>
+			<div>Fri</div>
+			<div>Sat</div>
+		</div>
+		
+		<div class="days" id="days"></div>
+	</div>
+</body>
+
+</html>
