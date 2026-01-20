@@ -16,51 +16,53 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr data-day="monday">
 					<th scope="row">MONDAY</th>
-					<td><input id="monStart" type="time"></td>
-					<td><input id="monEnd" type="time"></td>
-				<tr>
+					<td><input name="mondayStart" id="monStart" type="time"></td>
+					<td><input name="mondayEnd" id="monEnd" type="time"></td>
+				</tr>
 				
-                                <tr>
+                                <tr data-day="tuesday">
                                         <th scope="row">TUESDAY</th>
-                                        <td><input id="tueStart" type="time"></td>
-                                        <td><input id="tueEnd" type="time"></td>
-                                <tr>
+                                        <td><input name="tuesdayStart" id="tueStart" type="time"></td>
+                                        <td><input name="tuesdayEnd" id="tueEnd" type="time"></td>
+                                </tr>
 
-                                <tr>
+                                <tr data-day="wednesday">
                                         <th scope="row">WEDNESDAY</th>
-                                        <td><input id="wedStart" type="time"></td>
-                                        <td><input id="wedEnd" type="time"></td>
-                                <tr>
+                                        <td><input name="wednesdayStart" id="wedStart" type="time"></td>
+                                        <td><input id="wednesdayEnd" type="time"></td>
+                                </tr>
 
-                                <tr>
+                                <tr data-day="thursday">
                                         <th scope="row">THURSDAY</th>
-                                        <td><input id="thuStart" type="time"></td>
-                                        <td><input id="thuEnd" type="time"></td>
-                                <tr>
+                                        <td><input name="thursdayStart" id="thuStart" type="time"></td>
+                                        <td><input name="thursdayEnd" id="thuEnd" type="time"></td>
+                                </tr>
 
-                                <tr>
+                                <tr data-day="friday">
                                         <th scope="row">FRIDAY</th>
-                                        <td><input id="friStart" type="time"></td>
-                                        <td><input id="friEnd" type="time"></td>
-                                <tr>
+                                        <td><input name="fridayStart" id="friStart" type="time"></td>
+                                        <td><input name="fridayEnd" id="friEnd" type="time"></td>
+                                </tr>
 
-                                <tr>
+                                <tr data-day="saturday">
                                         <th scope="row">SATURDAY</th>
-                                        <td><input id="satStart" type="time"></td>
-                                        <td><input id="satEnd" type="time"></td>
-                                <tr>
+                                        <td><input name="saturdayStart" id="satStart" type="time"></td>
+                                        <td><input name="saturdayEnd" id="satEnd" type="time"></td>
+                                </tr>
 
-                                <tr>
+                                <tr data-day="sunday">
                                         <th scope="row">SUNDAY</th>
-                                        <td><input id="sunStart" type="time"></td>
-                                        <td><input id="sunEnd" type="time"></td>
-                                <tr>
+                                        <td><input name="sundayStart" id="sunStart" type="time"></td>
+                                        <td><input name="sundayEnd" id="sunEnd" type="time"></td>
+                                </tr>
 			</tbody>
 		</table>	
 		<br>
 		<button type="submit" id="submitBtn">SEND</button>
+		<button type="reset" id="clearBtn">CLEAR</button>
 	</form>
+	<script src="main.js"><script>
 </body>
 </html>
