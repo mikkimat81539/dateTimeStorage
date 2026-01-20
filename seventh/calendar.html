@@ -37,6 +37,42 @@
 		color: white;
 		border: none;
 	}
+	
+	#month-year{
+		font-weight: bold;
+		font-size: 20px;
+	}
+	
+	.weekdays, .days {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.days {
+		height: 240px;
+	}
+
+	.weekdays div, .days div{
+		width: 14.28%;
+		text-align: center;
+		padding: 10px 0;
+		border-radius: 5px;
+	}
+
+	.days div {
+		cursor: pointer;
+		transition: background-color 0.3s
+	}
+
+	.days div:hover {
+		background-color: white;
+		color: orangered;
+	}
+
+	.days .today {
+		background-color: orangered;
+		color: white;
+	}
 </style>
 
 </head>
@@ -70,7 +106,8 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', function (){
 			monthYear = document.getElementById('month-year');
-			
+			const dayContainer = document.getElementById('days') 			
+
 			const monthList = ['January', 'February', 'March', 'April',
 					'May', 'June', 'July', 'August', 'November', 'December']
 			
@@ -84,6 +121,19 @@
 				
 				monthYear.textContent = `${monthList[month]} ${year}`
 				monthYear.style.userSelect = 'none'
+				
+				dayContainer.innerHTML = ''
+
+				// Current month's dates
+				for (let i = 1; i <= lastDay; i++){
+					const dayDiv = document.createElement('div');
+					dayDiv.textContent = i
+					
+					if(i === currDate.getDate() && month === currDate.getMonth() && year === currDate.getFullYear()){
+						dayDiv.classList.add('today')
+					}
+					dayContainer.appendChild(dayDiv)
+				}
 			}
 
 			renderCalendar(currDate)
