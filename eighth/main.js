@@ -1,22 +1,21 @@
 const submitBtn = document.getElementById('submitBtn')
 const clearBtn = document.getElementById('clearBtn')
-const dayData = document.querySelectorAll('tr[data-day]')
+const myItems = document.querySelectorAll("tbody > tr")
 
 function DOWstorage(){
-	for (let i=0; i < dayData.length; i++){
-		const days = dayData[i].getAttribute('data-day') // key
-		const timeInputs = document.querySelectorAll('input')
+	for (let i=0; i < myItems.length; i++){
+		const myRows = myItems[i]
+		const rowAttr = myRows.getAttribute('data-day')
 		
-		for (let i=0; i < timeInputs.length; i++){
-			if (!timeInputs[i].value){
-				console.log('nothing')
-			}
+		//console.log(myRows)	
 		
-			else {
-				console.log(timeInputs[i].value , days)
-			}
-		}
+		const myInputs = myRows.querySelectorAll("td > input")
 
+		for (let j=0; j < myInputs.length; j++){
+			const myCols = myInputs[j]
+			console.log(myCols)
+			//debugger
+		}		
 	}
 }
 
