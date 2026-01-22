@@ -43,7 +43,7 @@ function DOWstorage(){
 
 
 submitBtn.addEventListener('click', (ev) => {
-	ev.preventDefault()
+	//ev.preventDefault()
 	DOWstorage()
 })
 
