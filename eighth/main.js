@@ -28,7 +28,13 @@ function DOWstorage(){
 		if (myList.length === 0){
 			localStorage.removeItem(rowAttr)
 		}
-		else{
+
+		else if (0 < myList.length && myList.length < myInputs.length){
+			//console.log(rowAttr, "ERROR")
+			localStorage.removeItem(rowAttr)
+		}
+		
+		else {
 			localStorage.setItem(rowAttr, myList)
 		}	
 		//debugger
