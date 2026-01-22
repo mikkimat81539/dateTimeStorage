@@ -15,11 +15,22 @@ function DOWstorage(){
 
 		for (let j=0; j < myInputs.length; j++){
 			const myCols = myInputs[j].value
-			myList.push(myCols)
-			//debugger
+			
+			if(!myCols){
+				// pass
+			}			
+			
+			else {
+				myList.push(myCols)
+			}
 		}		
-		console.log(rowAttr, myList)
-		localStorage.setItem(rowAttr, myList)
+		
+		if (myList.length === 0){
+			localStorage.removeItem(rowAttr)
+		}
+		else{
+			localStorage.setItem(rowAttr, myList)
+		}	
 		//debugger
 	}
 }
