@@ -11,11 +11,16 @@ function DOWstorage(){
 		
 		const myInputs = myRows.querySelectorAll("td > input")
 
+		let myList = []		
+
 		for (let j=0; j < myInputs.length; j++){
-			const myCols = myInputs[j]
-			console.log(myCols)
+			const myCols = myInputs[j].value
+			myList.push(myCols)
 			//debugger
 		}		
+		console.log(rowAttr, myList)
+		localStorage.setItem(rowAttr, myList)
+		//debugger
 	}
 }
 
@@ -27,4 +32,5 @@ submitBtn.addEventListener('click', (ev) => {
 
 clearBtn.addEventListener('click', () => {
 	console.clear()
+	localStorage.clear()
 })
