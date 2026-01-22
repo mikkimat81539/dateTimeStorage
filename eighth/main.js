@@ -1,6 +1,10 @@
 const submitBtn = document.getElementById('submitBtn')
 const clearBtn = document.getElementById('clearBtn')
 const myItems = document.querySelectorAll("tbody > tr")
+// const startTime = document.querySelectorAll('.startTime')
+// const endTime = document.querySelectorAll('.endTime')
+
+document.addEventListener("DOMContentLoaded", DOWstorage)
 
 function DOWstorage(){
 	for (let i=0; i < myItems.length; i++){
@@ -11,6 +15,9 @@ function DOWstorage(){
 		
 		const myInputs = myRows.querySelectorAll("td > input")
 
+		const startTime = myRows.querySelectorAll('.startTime')
+		const endTime = myRows.querySelectorAll('.endTime')		
+
 		let myList = []		
 
 		for (let j=0; j < myInputs.length; j++){
@@ -19,10 +26,13 @@ function DOWstorage(){
 			if(!myCols){
 				// pass
 			}			
-			
+						
+
 			else {
 				myList.push(myCols)
+				
 			}
+			// debugger
 		}		
 		
 		if (myList.length === 0){
@@ -32,10 +42,12 @@ function DOWstorage(){
 		else if (0 < myList.length && myList.length < myInputs.length){
 			//console.log(rowAttr, "ERROR")
 			localStorage.removeItem(rowAttr)
+			throw "ERROR"
 		}
 		
 		else {
 			localStorage.setItem(rowAttr, myList)
+			console.clear()
 		}	
 		//debugger
 	}
@@ -43,7 +55,7 @@ function DOWstorage(){
 
 
 submitBtn.addEventListener('click', (ev) => {
-	//ev.preventDefault()
+	ev.preventDefault()
 	DOWstorage()
 })
 
