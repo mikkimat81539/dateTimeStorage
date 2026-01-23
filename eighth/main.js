@@ -15,8 +15,8 @@ function DOWstorage(){
 		
 		const myInputs = myRows.querySelectorAll("td > input")
 
-		const startTime = myRows.querySelectorAll('.startTime')
-		const endTime = myRows.querySelectorAll('.endTime')		
+		// const startTime = myRows.querySelectorAll('.startTime')
+		// const endTime = myRows.querySelectorAll('.endTime')		
 
 		let myList = []		
 
@@ -30,9 +30,7 @@ function DOWstorage(){
 
 			else {
 				myList.push(myCols)
-				
 			}
-			// debugger
 		}		
 		
 		if (myList.length === 0){

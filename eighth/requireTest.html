@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Test</title>
+</head>
+
+<body>
+  <form>
+    <div id="lengthTest1">
+      <input type="text" class="requireAttr">
+      <input type="text" class="requireAttr">
+    </div>
+    <br><br>
+    <div id="lengthTest2">
+      <input type="text" class="requireAttr">
+      <input type="text" class="requireAttr">
+    </div>
+    <br>
+    <button type="submit" id="submitBtn">Send</button>
+  </form>
+  <script>
+	const submitBtn = document.getElementById('submitBtn')
+	const requireAttr = document.querySelectorAll("div > input")
+
+	submitBtn.addEventListener('click', (ev) => {
+		ev.preventDefault()
+		console.log(requireAttr.length)
+	})
+  </script>
+</body>
+</html>
